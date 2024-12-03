@@ -1040,9 +1040,25 @@ func dealWithInput() ([]int, []int) {
 	return left, right
 }
 
+func similarity(left, right []int) int {
+	counts := make(map[int]int)
+	countsTotal := 0
+
+	for _, num := range right {
+		counts[num]++
+	}
+
+	for i := range left {
+		countsTotal += left[i] * counts[left[i]]
+	}
+
+	return countsTotal
+}
+
 func main() {
 
 	list1, list2 := dealWithInput()
 
 	fmt.Println(distance(list1, list2))
+	fmt.Println(similarity(list1, list2))
 }
