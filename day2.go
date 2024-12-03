@@ -7,6 +7,7 @@ import (
 )
 
 func safety(reports [][]int) int {
+	counter := 0
 
 	return 0
 }
