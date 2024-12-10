@@ -9,16 +9,19 @@ import (
 
 func validate(direction bool, report []int) int {
 	for i := 0; i < len(report)-1; i++ {
-		diff := math.Abs(float64(report[i])) - math.Abs(float64(report[i+1]))
-		if diff >= 1 && diff <= 3 {
+
+		diff := math.Abs(float64(report[i])) - float64(report[i+1])
+
+		if diff < 1 || diff > 3 {
 			return 0
 		}
+
 		if !direction {
-			if report[i] > report[i+1] {
+			if report[i] >= report[i+1] {
 				return 0
 			}
 		} else if direction {
-			if report[i] < report[i+1] {
+			if report[i] <= report[i+1] {
 				return 0
 			}
 		}
