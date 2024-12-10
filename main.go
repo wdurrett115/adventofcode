@@ -14,6 +14,8 @@ func main() {
 
 	// Day 2
 	reports := consumeData()
+	safeReports := safety(reports)
 
 	fmt.Println(reports)
+	fmt.Println(safeReports)
 }
