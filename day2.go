@@ -10,7 +10,7 @@ import (
 func validate(direction bool, report []int) (int, int) {
 	for i := 0; i < len(report)-1; i++ {
 
-		diff := math.Abs(float64(report[i])) - float64(report[i+1])
+		diff := int(math.Abs(float64(report[i] - report[i+1])))
 
 		if !(diff >= 1 && diff <= 3) {
 			return 2, i
