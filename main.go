@@ -14,8 +14,8 @@ func main() {
 
 	// Day 2
 	reports := consumeData()
-	safeReports, goods, place := safety(reports)
+	safeReports := safety(reports)
 
 	fmt.Println(reports)
-	fmt.Println(safeReports, goods, place)
+	fmt.Println(safeReports)
 }
